@@ -1,0 +1,156 @@
+import Mock from 'mockjs';
+
+// const Random = Mock.Random;
+// Object.keys(Random).map((val) => console.log(val));
+
+function mockAll() {
+  let allKyes = [
+    // 'extend',
+    // 'order', // 不支持单独调用
+
+    // 图片依赖canvas
+    // 'image',
+    // 'img',
+    // 'dataImage',
+
+    // 需要传入参数
+    // 'upper',
+    // 'lower',
+
+    'boolean',
+    'bool',
+    'natural',
+    'integer',
+    'int',
+    'float',
+    'character',
+    'char',
+    'string',
+    'str',
+    'range',
+    'date',
+    'time',
+    'datetime',
+    'now',
+    'color',
+    'hex',
+    'rgb',
+    'rgba',
+    'hsl',
+    'paragraph',
+    'cparagraph',
+    'sentence',
+    'csentence',
+    'word',
+    'cword',
+    'title',
+    'ctitle',
+    'first',
+    'last',
+    'name',
+    'cfirst',
+    'clast',
+    'cname',
+    'url',
+    'protocol',
+    'domain',
+    'tld',
+    'email',
+    'ip',
+    'region',
+    'province',
+    'city',
+    'county',
+    'zip',
+    'capitalize',
+    
+    'pick',
+    'shuffle',
+    'd4',
+    'd6',
+    'd8',
+    'd12',
+    'd20',
+    'd100',
+    'guid',
+    'uuid',
+    'id',
+    'increment',
+    'inc',
+  ];
+  
+  let allParam = {};
+  allKyes.forEach(key => {
+    allParam[key] = `@${key}()`
+  });
+  
+  let ret = Mock.mock(allParam);
+  console.log(ret);
+};
+
+mockAll();
+
+let alllogs = {
+  extend: {},
+  boolean: true,
+  bool: true,
+  natural: 5804657740134108,
+  integer: -6391561070439204,
+  int: 8777591355249076,
+  float: -1464522219736124.2,
+  character: 'U',
+  char: 'R',
+  string: 'Fl(',
+  str: 'p%Cs6w',
+  range: [],
+  date: '1988-09-24',
+  time: '13:52:06',
+  datetime: '2015-08-05 20:52:57',
+  now: '2022-09-21 17:23:30',
+  color: '#f279d1',
+  hex: '#79f2f0',
+  rgb: 'rgb(242, 204, 121)',
+  rgba: 'rgba(169, 121, 242, 0.64)',
+  hsl: 'hsl(126, 82, 71)',
+  paragraph: 'Oksfttevm locyhhild ozhgv rhgqjb hxucnakqj zkpg snnu egdwx nmqspd qlqc wbyuuuln xwkftof. Lnceh gop dsekqztgo dxwojn .',
+  cparagraph: '外养文容做更清龙得持应易求东会团明。采九受十包习来近外头听石界时接光。好很心引团生风常身则文意者通委。率自族低经克直市非老毛十水只真后力。',
+  sentence: 'Iagopzmbv tahfklh ifsi cetxsnwek xvqmptqpk fut bksgs nkbkyxxdh sedkibx wvquovecgd ygstqqf cmei gpevecon emmtlpet mephaj nbvokwk.',
+  csentence: '用统元知约府格片质因准处上此。',
+  word: 'stg',
+  cword: '命',
+  title: 'Wnpsrj Hzjngt Mnjv Jsjmg Ypatojrtx Rjojxxrb Iztdnvgbj',
+  ctitle: '何好证',
+  first: 'Helen',
+  last: 'Thomas',
+  name: 'Matthew White',
+  cfirst: '谭',
+  clast: '敏',
+  cname: '阎敏',
+  url: 'nntp://kkgckhs.pn/vbpbo',
+  protocol: 'http',
+  domain: 'yrb.sm',
+  tld: 'co',
+  email: 'm.uxs@bdgqbltr.gh',
+  ip: '189.175.231.134',
+  region: '华南',
+  province: '河南省',
+  city: '那曲地区',
+  county: '-',
+  zip: '857771',
+  capitalize: 'Undefined',
+  upper: 'UNDEFINED',
+  lower: 'undefined',
+  pick: '',
+  shuffle: [],
+  d4: 2,
+  d6: 2,
+  d8: 4,
+  d12: 7,
+  d20: 5,
+  d100: 21,
+  guid: 'ef9C86B6-3Aa5-B5d4-b3eb-843F96f6F8e4',
+  uuid: '674D3A5b-ecf1-c1C1-8Ec2-Bc8A6CC2cfA6',
+  id: '710000201201086460',
+  increment: 1,
+  inc: 2
+}
