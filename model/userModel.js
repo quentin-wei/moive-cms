@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema(
     province: { type: String },
     postCode: { type: String },
     email: { type: String },
-    ip: { type: String },
+    ip: { type: String }
   },
   { timestamps: true }
 );

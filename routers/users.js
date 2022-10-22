@@ -4,15 +4,7 @@ import Router from 'koa-router';
 import { APP_SECRET } from '../config/index.js';
 
 // 控制器方法
-import {
-  find,
-  create,
-  findById,
-  login,
-  deleteById,
-  checkOwner,
-  update
-} from '../controllers/users.js';
+import { find, create, findById, login, deleteById, checkOwner, update } from '../controllers/users.js';
 
 const auth = jwt({ secret: APP_SECRET }); // jwt鉴权
 

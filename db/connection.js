@@ -11,7 +11,7 @@ const connection = mongoose.createConnection(
   // 一些兼容配置，必须加，你不写运行的时候会提示你加。
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   }
 );
 
@@ -19,8 +19,8 @@ const connection = mongoose.createConnection(
 //   console.log('打开 mongodb 连接');
 // });
 
-connection.once("open", function () {
-  console.log("连接成功");
+connection.once('open', function () {
+  console.log('连接成功');
 });
 
 connection.on('err', (err) => {

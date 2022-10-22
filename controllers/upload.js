@@ -1,19 +1,14 @@
 import Upload from '../model/uploadModel.js';
-import { isExit, delFile } from "../utils/index.js";
+import { isExit, delFile } from '../utils/index.js';
 
 class UploadController {
   async create(ctx) {
-    const {
-      originalFilename,
-      newFilename,
-      mimetype,
-      filepath,
-    } = ctx.request.files.file;
+    const { originalFilename, newFilename, mimetype, filepath } = ctx.request.files.file;
     const file = await new Upload({
       originalFilename,
       newFilename,
       mimetype,
-      filepath,
+      filepath
     }).save();
 
     console.log('upload ok');
@@ -43,21 +38,17 @@ class UploadController {
         console.log('delFile：', msg);
         ctx.status = 204;
         ctx.body = {
-          msg: 'file delete ok',
+          msg: 'file delete ok'
         };
       })
       .catch((err) => {
         console.log(err);
         ctx.status = 500;
         ctx.body = {
-          msg: 'file delete err',
+          msg: 'file delete err'
         };
       });
   }
 }
 
-const uploadController = new UploadController();
-
-const { create, deleteById } = uploadController;
-
-export { create, deleteById };
+export const { create, deleteById } = new UploadController();

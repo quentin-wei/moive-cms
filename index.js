@@ -22,7 +22,7 @@ const mongoHost = `${MONGO_HOST}${MONGO_DB_NAME}`;
 
 mongoose.connect(mongoHost, {
   useUnifiedTopology: true,
-  useNewUrlParser: true,
+  useNewUrlParser: true
 });
 
 mongoose.connection.on('open', () => {
@@ -44,8 +44,7 @@ app.use(koaStatic(path.join(__dirname, './static'))); // 静态资源
 app.use(
   // 错误处理
   error({
-    postFormat: (e, { stack, ...rest }) =>
-      process.env.NODE_ENV === 'production' ? rest : { stack, ...rest },
+    postFormat: (e, { stack, ...rest }) => (process.env.NODE_ENV === 'production' ? rest : { stack, ...rest })
   })
 );
 
@@ -57,13 +56,13 @@ app.use(
     multipart: true,
     formidable: {
       uploadDir: path.join(__dirname, './static'),
-      keepExtensions: true,
-    },
+      keepExtensions: true
+    }
   })
 );
 
-app.use(parameter(app));  // 参数校验
-allRoute(app);  // 路由处理
+app.use(parameter(app)); // 参数校验
+allRoute(app); // 路由处理
 
 app.listen(APP_PORT, () => {
   console.log(`程序启动在${APP_PORT}端口了`);

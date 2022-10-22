@@ -12,6 +12,7 @@ specifiers:
   koa-static: ^5.0.0
   mockjs: ^1.1.0
   mongoose: ^6.6.1
+  prettier: ^2.7.1
 
 dependencies:
   '@koa/cors': 3.4.3
@@ -25,6 +26,9 @@ dependencies:
   koa-static: 5.0.0
   mockjs: 1.1.0
   mongoose: 6.6.7
+
+devDependencies:
+  prettier: 2.7.1
 
 packages:
 
@@ -712,6 +716,12 @@ packages:
   /path-to-regexp/6.2.1:
     resolution: {integrity: sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==}
     dev: false
+
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
 
   /punycode/2.1.1:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}

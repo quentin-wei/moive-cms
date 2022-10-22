@@ -37,9 +37,7 @@ class UserController {
           return f;
         })
         .join(' ');
-    const user = await User.findById(ctx.params.id)
-      .select(selectFields)
-      .populate(populateStr);
+    const user = await User.findById(ctx.params.id).select(selectFields).populate(populateStr);
     if (!user) {
       ctx.throw(404, '用户不存在');
     }
@@ -51,7 +49,7 @@ class UserController {
     ctx.verifyParams({
       // 入参格式校验
       name: { type: 'string', required: true },
-      password: { type: 'string', required: true },
+      password: { type: 'string', required: true }
     });
     const { name } = ctx.request.body;
     const repeatedUser = await User.findOne({ name });
@@ -86,7 +84,7 @@ class UserController {
       province: { type: 'string', required: false },
       postCode: { type: 'string', required: false },
       email: { type: 'string', required: false },
-      ip: { type: 'string', required: false },
+      ip: { type: 'string', required: false }
     });
 
     console.log(ctx.request.body);
@@ -106,7 +104,7 @@ class UserController {
     }
     ctx.status = 204;
     ctx.body = {
-      msg: 'delete ok',
+      msg: 'delete ok'
     };
   }
 
@@ -114,7 +112,7 @@ class UserController {
     // 登录
     ctx.verifyParams({
       name: { type: 'string', required: true },
-      password: { type: 'string', required: true },
+      password: { type: 'string', required: true }
     });
     const user = await User.findOne(ctx.request.body);
     if (!user) {
@@ -122,7 +120,7 @@ class UserController {
     }
     const { _id, name } = user;
     const token = jsonwebtoken.sign({ _id, name }, APP_SECRET, {
-      expiresIn: '1d',
+      expiresIn: '1d'
     }); // 登录成功返回jwt加密后的token信息
     ctx.body = { token };
   }
@@ -137,17 +135,4 @@ class UserController {
   }
 }
 
-const userController = new UserController();
-
-const {
-  find,
-  create,
-  findById,
-  deleteById,
-  checkOwner,
-  login,
-  update,
-  checkUserExist,
-} = userController;
-
-export { find, create, findById, deleteById, login, update, checkOwner, checkUserExist };
+export const { find, create, findById, deleteById, login, update, checkOwner, checkUserExist } = new UserController();
