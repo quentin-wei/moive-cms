@@ -1,0 +1,80 @@
+@hostname = localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+@createdAt = {{$datetime iso8601}}
+@modifiedBy = {{$processEnv USERNAME}}
+
+@userRouter = users
+
+# 刘丽 688707
+@userToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzJiZDkxMmZhOWM1MTEyNjMzYzExNjkiLCJuYW1lIjoi546L6LaFIiwiaWF0IjoxNjYzODMwNDk3LCJleHAiOjE2NjM5MTY4OTd9.7XudM2G4Hlt4rb8v03wWKIFishOgmgCQ4B6FmWwjUXY
+
+###
+# 批量查询 (模糊查询)
+GET http://{{host}}/{{userRouter}}?q=邓 HTTP/1.1
+
+###
+GET http://{{host}}/{{userRouter}} HTTP/1.1
+
+
+###
+# 根据id (mongo 自带id)查询
+GET http://{{host}}/{{userRouter}}/632bd8e866bf7b984586d73e HTTP/1.1
+
+###
+# 根据id(用户自定义id)查询2
+GET http://{{host}}/{{userRouter}}?id=650000198209243466 HTTP/1.1
+
+###
+# 登录
+POST http://{{host}}/{{userRouter}}/login HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "name": "李芳",
+    "password": "775046"
+}
+
+### 
+# 创建
+POST http://{{host}}/{{userRouter}} HTTP/1.1
+Content-Type: {{contentType}}
+Authentication: Bearer {{userToken}}
+
+{
+    "id": "110030197103868991",
+    "name": "赵云",
+    "password": "629977",
+    "sex": 0,
+    "age": 29,
+    "color": "#9cf279",
+    "title": "组石铁次规设权入农见队程基需克重划着",
+    "content": "取并选万联法外回发观地理儿头传志价。",
+    "show": false,
+    "province": "台湾",
+    "postCode": "132065",
+    "email": "w.fgrxpqdmr@xxymyz.vg",
+    "ip": "184.182.184.89"
+}
+
+
+###
+# 更新 
+
+
+###
+# 删除
+# 根据id(用户自定义id)删除
+GET http://{{host}}/{{userRouter}}/delete/632bd912fa9c5112633c1173 HTTP/1.1
+
+
+###
+# 删除文件 通过id
+GET http://{{host}}/upload/delete/632c655fe0024375467c484b HTTP/1.1
+
+
+
+
+
