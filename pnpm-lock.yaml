@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@koa/cors': ^3.4.1
+  dayjs: ^1.11.6
   jsonwebtoken: ^8.5.1
   koa: ^2.13.4
   koa-body: ^5.0.0
@@ -16,6 +17,7 @@ specifiers:
 
 dependencies:
   '@koa/cors': 3.4.3
+  dayjs: 1.11.6
   jsonwebtoken: 8.5.1
   koa: 2.13.4
   koa-body: 5.0.0
@@ -164,6 +166,10 @@ packages:
     dependencies:
       depd: 2.0.0
       keygrip: 1.1.0
+    dev: false
+
+  /dayjs/1.11.6:
+    resolution: {integrity: sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==}
     dev: false
 
   /debug/3.2.7:
