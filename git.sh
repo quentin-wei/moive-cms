@@ -1,3 +1,7 @@
 # /bin/bash
 
-git st && git add . && git cm 'webhook test' && git push origin main
+cmmsg=$1;
+
+echo $cmmsg
+
+git st && git add . && git cm "$cmmsg" && git push origin main
