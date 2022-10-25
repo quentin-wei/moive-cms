@@ -5,7 +5,7 @@ import { APP_SECRET } from '../config/index.js';
 class UserController {
   async find(ctx) {
     // 查询用户列表(分页)
-    const { per_page = 15 } = ctx.query;
+    const { per_page = 20 } = ctx.query;
     const page = Math.max(ctx.query.page * 1, 1) - 1;
     const perPage = Math.max(per_page * 1, 1);
     ctx.body = await User.find({ name: new RegExp(ctx.query.q) })
